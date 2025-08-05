@@ -1,0 +1,70 @@
+INSERT INTO Customer (CustomerID, Title, CustomerName, Email, MobileNumber, UserID, Password, Status) VALUES
+(1000000000001, 'Mr.', 'Jugal Ghia', 'jugalghia@tcs.com', '9820038222', 'jugal', 'Pass@111', 'active'),
+(1000000000002, 'Ms.', 'Jane Smith', 'janesmith2@example.com', '9876543211', 'jane02', 'Pass@111', 'active'),
+(1000000000003, 'Mrs.', 'Emily Johnson', 'emilyjohnson3@example.com', '9876543212', 'emily03', 'Pass@111', 'active'),
+(1000000000004, 'Dr.', 'Michael Brown', 'michaelbrown4@example.com', '9876543213', 'michael04', 'Pass@111', 'active'),
+(1000000000005, 'Mr.', 'Chris Davis', 'chrisdavis5@example.com', '9876543214', 'chris05', 'Pass@111', 'active'),
+(1000000000006, 'Ms.', 'Anna Wilson', 'annawilson6@example.com', '9876543215', 'anna06', 'Pass@111', 'active'),
+(1000000000007, 'Mrs.', 'Sophia Taylor', 'sophiataylor7@example.com', '9876543216', 'sophia07', 'Pass@111', 'active'),
+(1000000000008, 'Mr.', 'Daniel Lee', 'daniellee8@example.com', '9876543217', 'daniel08', 'Pass@111', 'active'),
+(1000000000009, 'Ms.', 'Olivia Moore', 'oliviamoore9@example.com', '9876543218', 'olivia09', 'Pass@111', 'active'),
+(1000000000010, 'Dr.', 'James Clark', 'jamesclark10@example.com', '9876543219', 'james10', 'Pass@111', 'active');
+
+
+//DO NOT INSERT LOGIN DATA TRIGGER WILL TAKE CARE OF IT
+UPDATE LOGIN SET USERTYPE='admin' where UserID='jugal'
+INSERT INTO Login (LoginID,CustomerID, Email, UserID, Password, USERTYPE, Status) VALUES
+(111,1000000000001, 'johndoe1@example.com', 'john01', 'Pass@111', 'user', 'active'),
+(112,1000000000002, 'janesmith2@example.com', 'jane02', 'Pass@111', 'user','active'),
+(113,1000000000003, 'emilyjohnson3@example.com', 'emily03', 'Pass@111','user', 'active'),
+(114,1000000000004, 'michaelbrown4@example.com', 'michael04', 'Pass@111','user', 'active'),
+(115,1000000000005, 'chrisdavis5@example.com', 'chris05', 'Pass@111', 'user','active'),
+(116,1000000000006, 'annawilson6@example.com', 'anna06', 'Pass@111','user', 'active'),
+(117,1000000000007, 'sophiataylor7@example.com', 'sophia07', 'Pass@111','user', 'active'),
+(118,1000000000008, 'daniellee8@example.com', 'daniel08', 'Pass@111', 'user','active'),
+(119,1000000000009, 'oliviamoore9@example.com', 'olivia09', 'Pass@111','user', 'active'),
+(120,1000000000010, 'jamesclark10@example.com', 'james10', 'Pass@111', 'user','active');
+select * from Login;
+
+INSERT INTO Bill (BillID, CustomerID, DueAmount, PayableAmount, PaymentID, PaymentStatus, BillDate, BillExpiryDate) VALUES
+(10000000001, 1000000000001, 500.00, 550.00, NULL, 'Pending', '2025-01-01', '2025-01-29'),
+(10000000002, 1000000000001, 700.00, 770.00, NULL, 'Pending', '2025-01-08', '2025-02-05'),
+(10000000003, 1000000000001, 450.00, 495.00, NULL, 'Pending', '2025-01-15', '2025-02-12'),
+(10000000004, 1000000000002, 600.00, 660.00, NULL, 'Pending', '2025-01-01', '2025-01-29'),
+(10000000005, 1000000000002, 800.00, 880.00, NULL, 'Pending', '2025-01-08', '2025-02-05'),
+(10000000006, 1000000000002, 300.00, 330.00, NULL, 'Pending', '2025-01-15', '2025-02-12'),
+(10000000007, 1000000000003, 400.00, 440.00, NULL, 'Pending', '2025-01-01', '2025-01-29'),
+(10000000008, 1000000000003, 900.00, 990.00, NULL, 'Pending', '2025-01-08', '2025-02-05'),
+(10000000009, 1000000000003, 1000.00, 1100.00, NULL, 'Pending', '2025-01-15', '2025-02-12'),
+(10000000010, 1000000000004, 450.00, 495.00, NULL, 'Pending', '2025-01-02', '2025-01-30'),
+(30000000013, 1000000000005, 850.00, 850.00, NULL, 'Pending', '2025-01-01', '2025-01-29'),
+(30000000014, 1000000000005, 920.50, 920.50, NULL, 'Pending', '2025-01-05', '2025-02-02'),
+(30000000015, 1000000000005, 780.75, 780.75, NULL, 'Pending', '2025-01-10', '2025-02-07'),
+(30000000016, 1000000000006, 1040.00, 1040.00, NULL, 'Pending', '2025-01-01', '2025-01-29'),
+(30000000017, 1000000000006, 990.25, 990.25, NULL, 'Pending', '2025-01-05', '2025-02-02'),
+(30000000018, 1000000000006, 760.00, 760.00, NULL, 'Pending', '2025-01-10', '2025-02-07'),
+(30000000019, 1000000000007, 810.00, 810.00, NULL, 'Pending', '2025-01-01', '2025-01-29'),
+(30000000020, 1000000000007, 940.00, 940.00, NULL, 'Pending', '2025-01-05', '2025-02-02'),
+(30000000021, 1000000000007, 870.50, 870.50, NULL, 'Pending', '2025-01-10', '2025-02-07'),
+(30000000022, 1000000000008, 650.00, 650.00, NULL, 'Pending', '2025-01-01', '2025-01-29'),
+(30000000023, 1000000000008, 700.25, 700.25, NULL, 'Pending', '2025-01-05', '2025-02-02'),
+(30000000024, 1000000000008, 890.00, 890.00, NULL, 'Pending', '2025-01-10', '2025-02-07'),
+(30000000025, 1000000000009, 720.00, 720.00, NULL, 'Pending', '2025-01-01', '2025-01-29'),
+(30000000026, 1000000000009, 810.50, 810.50, NULL, 'Pending', '2025-01-05', '2025-02-02'),
+(30000000027, 1000000000009, 950.75, 950.75, NULL, 'Pending', '2025-01-10', '2025-02-07'),
+(30000000028, 1000000000010, 880.00, 880.00, NULL, 'Pending', '2025-01-01', '2025-01-29'),
+(30000000029, 1000000000010, 790.25, 790.25, NULL, 'Pending', '2025-01-05', '2025-02-02'),
+(30000000030, 1000000000010, 910.00, 910.00, NULL, 'Pending', '2025-01-10', '2025-02-07');
+
+
+INSERT INTO Complaint (ComplaintID, CustomerID, ComplaintType, Category, Landmark, Problem, Address, MobileNumber, ComplaintDate, ComplaintStatus) VALUES
+(3287300001, 1000000000001, 'Electricity', 'Billing Issue', 'Near Mall', 'Overcharged in the latest bill', '123 Street, City', '9876543210', '2025-01-10', 'Pending'),
+(32873000002, 1000000000002, 'Electricity', 'Power Outage', 'Near School', 'Power outage for 5 hours', '456 Street, City', '9876543211', '2025-01-10', 'Pending'),
+(32873000003, 1000000000003, 'Electricity', 'Connection Issue', 'Near Hospital', 'Frequent power fluctuations', '789 Street, City', '9876543212', '2025-01-10', 'Pending'),
+(32873000004, 1000000000004, 'Electricity', 'Meter Fault', 'City Center', 'Meter reading is incorrect', '101 Street, City', '9876543213', '2025-01-10', 'Pending'),
+(32873000005, 1000000000005, 'Electricity', 'Billing Issue', 'Near Market', 'Incorrect bill amount', '202 Street, City', '9876543214', '2025-01-10', 'Pending'),
+(32873000006, 1000000000006, 'Electricity', 'Power Outage', 'Near Station', 'Frequent power cuts during night', '303 Street, City', '9876543215', '2025-01-10', 'Pending'),
+(32873000007, 1000000000007, 'Electricity', 'Connection Issue', 'Near Library', 'Low voltage issue', '404 Street, City', '9876543216', '2025-01-10', 'Pending'),
+(32873000008, 1000000000008, 'Electricity', 'Meter Fault', 'Near Park', 'Meter not functioning properly', '505 Street, City', '9876543217', '2025-01-10', 'Pending'),
+(32873000009, 1000000000009, 'Electricity', 'Billing Issue', 'Near Mall', 'Late fee charged wrongly', '606 Street, City', '9876543218', '2025-01-10', 'Pending'),
+(32873000010, 1000000000010, 'Electricity', 'Power Outage', 'Near Temple', 'Extended power outage for 10 hours', '707 Street, City', '9876543219', '2025-01-10', 'Pending');

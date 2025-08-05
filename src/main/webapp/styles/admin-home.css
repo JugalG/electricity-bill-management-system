@@ -1,0 +1,9 @@
+article {
+	padding: 1rem;
+}
+
+article > i {
+	font-size: 3rem;
+	margin: 1rem;
+}
+

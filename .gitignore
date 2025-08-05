@@ -1,6 +1,10 @@
 # Compiled class file
 *.class
 
+.classpath
+derby.log
+.settings
+
 # Log file
 *.log
 
